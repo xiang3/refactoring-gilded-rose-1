@@ -19,10 +19,10 @@ class GildedRose {
 
     private void updateQualityExpired(Item item) {
         if (item.sell_in < 0) {
-            if (!item.name.equals("Aged Brie")) {
-                if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!item.isAgedBrie()) {
+                if (!item.isBackstage()) {
                     if (item.quality > 0) {
-                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                        if (!item.isSulfuras()) {
                             item.quality = item.quality - 1;
                         }
                     }
@@ -38,16 +38,16 @@ class GildedRose {
     }
 
     private void updateSellIn(Item item) {
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (!item.isSulfuras()) {
             item.sell_in = item.sell_in - 1;
         }
     }
 
     private void updateQuality(Item item) {
-        if (!item.name.equals("Aged Brie")
-                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+        if (!item.isAgedBrie()
+                && !item.isBackstage()) {
             if (item.quality > 0) {
-                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                if (!item.isSulfuras()) {
                     item.quality = item.quality - 1;
                 }
             }
@@ -55,17 +55,13 @@ class GildedRose {
             if (item.quality < 50) {
                 item.quality = item.quality + 1;
 
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (item.isBackstage()) {
                     if (item.sell_in < 11) {
-                        if (item.quality < 50) {
-                            item.quality = item.quality + 1;
-                        }
+                        item.quality = item.quality + 1;
                     }
 
                     if (item.sell_in < 6) {
-                        if (item.quality < 50) {
-                            item.quality = item.quality + 1;
-                        }
+                        item.quality = item.quality + 1;
                     }
                 }
             }
