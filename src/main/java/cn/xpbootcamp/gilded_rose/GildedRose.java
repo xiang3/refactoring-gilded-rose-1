@@ -18,20 +18,20 @@ class GildedRose {
     }
 
     private void updateQualityExpired(Item item) {
-        if (item.sell_in < 0) {
+        if (item.getSell_in() < 0) {
             if (!item.isAgedBrie()) {
                 if (!item.isBackstage()) {
-                    if (item.quality > 0) {
+                    if (item.getQuality() > 0) {
                         if (!item.isSulfuras()) {
-                            item.quality = item.quality - 1;
+                            item.setQuality(item.getQuality() - 1);
                         }
                     }
                 } else {
-                    item.quality = 0;
+                    item.setQuality(0);
                 }
             } else {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
+                if (item.getQuality() < 50) {
+                    item.setQuality(item.getQuality() + 1);
                 }
             }
         }
@@ -39,29 +39,28 @@ class GildedRose {
 
     private void updateSellIn(Item item) {
         if (!item.isSulfuras()) {
-            item.sell_in = item.sell_in - 1;
+            item.setSell_in(item.getSell_in() - 1);
         }
     }
 
     private void updateQuality(Item item) {
-        if (!item.isAgedBrie()
-                && !item.isBackstage()) {
-            if (item.quality > 0) {
+        if (!item.isAgedBrie() && !item.isBackstage()) {
+            if (item.getQuality() > 0) {
                 if (!item.isSulfuras()) {
-                    item.quality = item.quality - 1;
+                    item.setQuality(item.getQuality() - 1);
                 }
             }
         } else {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
+            if (item.getQuality() < 50) {
+                item.setQuality(item.getQuality() + 1);
 
                 if (item.isBackstage()) {
-                    if (item.sell_in < 11) {
-                        item.quality = item.quality + 1;
+                    if (item.getSell_in() < 11) {
+                        item.setQuality(item.getQuality() + 1);
                     }
 
-                    if (item.sell_in < 6) {
-                        item.quality = item.quality + 1;
+                    if (item.getSell_in() < 6) {
+                        item.setQuality(item.getQuality() + 1);
                     }
                 }
             }
