@@ -9,7 +9,11 @@ public class Backstage extends Item {
     void updateQuality() {
         if (getQuality() < 50) {
             setQuality(getQuality() + 1);
-            if (getSell_in() < 11 || getSell_in() < 6) {
+            if (getSell_in() < 11) {
+                setQuality(getQuality() + 1);
+            }
+
+            if (getSell_in() < 6) {
                 setQuality(getQuality() + 1);
             }
         }

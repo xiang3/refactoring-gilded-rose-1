@@ -42,65 +42,19 @@ public class Item {
         return this.getName() + ", " + this.getSell_in() + ", " + this.getQuality();
     }
 
-    boolean isAgedBrie() {
-        return getName().equals("Aged Brie");
-    }
-
-    boolean isBackstage() {
-        return getName().equals("Backstage passes to a TAFKAL80ETC concert");
-    }
-
-    boolean isSulfuras() {
-        return getName().equals("Sulfuras, Hand of Ragnaros");
-    }
-
     void updateQualityExpired() {
-        if (getSell_in() < 0) {
-            if (!isAgedBrie()) {
-                if (!isBackstage()) {
-                    if (getQuality() > 0) {
-                        if (!isSulfuras()) {
-                            setQuality(getQuality() - 1);
-                        }
-                    }
-                } else {
-                    setQuality(0);
-                }
-            } else {
-                if (getQuality() < 50) {
-                    setQuality(getQuality() + 1);
-                }
-            }
+        if (getSell_in() < 0 && getQuality() > 0) {
+            setQuality(getQuality() - 1);
         }
     }
 
     void updateQuality() {
-        if (!isAgedBrie() && !isBackstage()) {
-            if (getQuality() > 0) {
-                if (!isSulfuras()) {
-                    setQuality(getQuality() - 1);
-                }
-            }
-        } else {
-            if (getQuality() < 50) {
-                setQuality(getQuality() + 1);
-
-                if (isBackstage()) {
-                    if (getSell_in() < 11) {
-                        setQuality(getQuality() + 1);
-                    }
-
-                    if (getSell_in() < 6) {
-                        setQuality(getQuality() + 1);
-                    }
-                }
-            }
+        if (getQuality() > 0) {
+            setQuality(getQuality() - 1);
         }
     }
 
     void updateSellIn() {
-        if (!isSulfuras()) {
             setSell_in(getSell_in() - 1);
-        }
     }
 }
