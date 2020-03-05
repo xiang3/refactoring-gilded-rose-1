@@ -6,7 +6,7 @@ public class Backstage extends Item {
     }
 
     @Override
-    void updateQuality() {
+    public void updateQuality() {
         if (getQuality() < 50) {
             setQuality(getQuality() + 1);
             if (getSellIn() < 11) {
@@ -20,12 +20,12 @@ public class Backstage extends Item {
     }
 
     @Override
-    void updateSellIn() {
+    public void updateSellIn() {
         setSellIn(getSellIn() - 1);
     }
 
     @Override
-    void updateQualityExpired() {
+    public void updateQualityExpired() {
         if (getSellIn() < 0) {
             setQuality(0);
         }

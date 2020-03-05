@@ -15,7 +15,7 @@ public class GildedRoseTest {
     public void foo() {
         Item[] items = new Item[] { new Item("foo", 1, 5) };
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
+        app.updateItemsQualityAndSellIn();
         assertEquals("foo", app.items[0].getName());
         assertThat(app.items[0].getQuality()).isEqualTo(4);
         assertThat(app.items[0].getSellIn()).isEqualTo(0);
@@ -37,11 +37,11 @@ public class GildedRoseTest {
 
         GildedRose app = new GildedRose(items);
 
-        app.updateQuality();
+        app.updateItemsQualityAndSellIn();
         assertEquals("[+5 Dexterity Vest, 9, 19, Aged Brie, 1, 1, Elixir of the Mongoose, 4, 6, Sulfuras, Hand of Ragnaros, 0, 80, Sulfuras, Hand of Ragnaros, -1, 80, Backstage passes to a TAFKAL80ETC concert, 14, 21, Backstage passes to a TAFKAL80ETC concert, 9, 51, Backstage passes to a TAFKAL80ETC concert, 4, 52, Backstage passes to a TAFKAL80ETC concert, 0, 23, Conjured Mana Cake, 2, 5]"
                 , Arrays.toString(items));
 
-        app.updateQuality();
+        app.updateItemsQualityAndSellIn();
         assertEquals("[+5 Dexterity Vest, 8, 18, Aged Brie, 0, 2, Elixir of the Mongoose, 3, 5, Sulfuras, Hand of Ragnaros, 0, 80, Sulfuras, Hand of Ragnaros, -1, 80, Backstage passes to a TAFKAL80ETC concert, 13, 22, Backstage passes to a TAFKAL80ETC concert, 8, 51, Backstage passes to a TAFKAL80ETC concert, 3, 52, Backstage passes to a TAFKAL80ETC concert, -1, 0, Conjured Mana Cake, 1, 4]"
                 , Arrays.toString(items));
     }

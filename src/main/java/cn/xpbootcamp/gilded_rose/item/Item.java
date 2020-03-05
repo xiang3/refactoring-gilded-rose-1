@@ -42,19 +42,27 @@ public class Item {
         return this.getName() + ", " + this.getSellIn() + ", " + this.getQuality();
     }
 
-    void updateQualityExpired() {
+    public void updateQualityExpired() {
         if (getSellIn() < 0 && getQuality() > 0) {
             setQuality(getQuality() - 1);
         }
     }
 
-    void updateQuality() {
+    public void updateQuality() {
         if (getQuality() > 0) {
             setQuality(getQuality() - 1);
         }
     }
 
-    void updateSellIn() {
+    public void updateSellIn() {
             setSellIn(getSellIn() - 1);
+    }
+
+    public void updateQualityAndSellIn() {
+        updateQuality();
+
+        updateSellIn();
+
+        updateQualityExpired();
     }
 }

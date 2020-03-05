@@ -6,19 +6,19 @@ public class AgedBric extends Item {
     }
 
     @Override
-    void updateQuality() {
+    public void updateQuality() {
         if (getQuality() < 50) {
             setQuality(getQuality() + 1);
         }
     }
 
     @Override
-    void updateSellIn() {
+    public void updateSellIn() {
         setSellIn(getSellIn() - 1);
     }
 
     @Override
-    void updateQualityExpired() {
+    public void updateQualityExpired() {
         if (getSellIn() < 0) {
             if (getQuality() < 50) {
                 setQuality(getQuality() + 1);

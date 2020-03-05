@@ -11,13 +11,7 @@ class GildedRose {
         this.items = items;
     }
 
-    public void updateQuality() {
-        Arrays.stream(items).forEach(item -> {
-            item.updateQuality();
-
-            item.updateSellIn();
-
-            item.updateQualityExpired();
-        });
+    public void updateItemsQualityAndSellIn() {
+        Arrays.stream(items).forEach(Item::updateQualityAndSellIn);
     }
 }
