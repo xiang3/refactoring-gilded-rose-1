@@ -1,5 +1,7 @@
 package cn.xpbootcamp.gilded_rose;
 
+import cn.xpbootcamp.gilded_rose.item.Item;
+import cn.xpbootcamp.gilded_rose.item.ItemFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package cn.xpbootcamp.gilded_rose;
+package cn.xpbootcamp.gilded_rose.item;
 
 public class AgedBric extends Item {
     public AgedBric(String name, int sell_in, int quality) {

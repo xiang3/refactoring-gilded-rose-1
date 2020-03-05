@@ -1,4 +1,4 @@
-package cn.xpbootcamp.gilded_rose;
+package cn.xpbootcamp.gilded_rose.item;
 
 public class ItemFactory {
     private static final String AGED_BRIE = "Aged Brie";

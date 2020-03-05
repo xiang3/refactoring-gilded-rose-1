@@ -1,5 +1,7 @@
 package cn.xpbootcamp.gilded_rose;
 
+import cn.xpbootcamp.gilded_rose.item.Item;
+
 import java.util.Arrays;
 
 class GildedRose {
