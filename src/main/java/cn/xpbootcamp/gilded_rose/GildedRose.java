@@ -9,7 +9,7 @@ class GildedRose {
         this.items = items;
     }
 
-    public void update_quality() {
+    public void updateQuality() {
         Arrays.stream(items).forEach(item -> {
             item.updateQuality();
 

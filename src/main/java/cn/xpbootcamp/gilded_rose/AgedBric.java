@@ -14,12 +14,12 @@ public class AgedBric extends Item {
 
     @Override
     void updateSellIn() {
-        setSell_in(getSell_in() - 1);
+        setSellIn(getSellIn() - 1);
     }
 
     @Override
     void updateQualityExpired() {
-        if (getSell_in() < 0) {
+        if (getSellIn() < 0) {
             if (getQuality() < 50) {
                 setQuality(getQuality() + 1);
             }

@@ -9,11 +9,11 @@ public class Backstage extends Item {
     void updateQuality() {
         if (getQuality() < 50) {
             setQuality(getQuality() + 1);
-            if (getSell_in() < 11) {
+            if (getSellIn() < 11) {
                 setQuality(getQuality() + 1);
             }
 
-            if (getSell_in() < 6) {
+            if (getSellIn() < 6) {
                 setQuality(getQuality() + 1);
             }
         }
@@ -21,12 +21,12 @@ public class Backstage extends Item {
 
     @Override
     void updateSellIn() {
-        setSell_in(getSell_in() - 1);
+        setSellIn(getSellIn() - 1);
     }
 
     @Override
     void updateQualityExpired() {
-        if (getSell_in() < 0) {
+        if (getSellIn() < 0) {
             setQuality(0);
         }
     }
